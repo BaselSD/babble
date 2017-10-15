@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Test</title>
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" /> 
+    <script type="text/javascript" src="../../node_modules/mocha/mocha.js"></script> 
+    <script type="text/javascript" src="../../node_modules/chai/chai.js"></script> 
+    <script type="text/javascript" src="../../node_modules/sinon/pkg/sinon.js"></script>
+    <script type="text/javascript" src="../../client/scripts/main.js"></script>
+  </head>
+<body>
+<div id="mocha"></div>
+
+<!-- myBody -->
+
+
+<header class="my-header">
+    <!-- <img class="logoimg" src="images/babblelogo.png" alt="">  -->
+</header>
+
+<div id="myModal" class="modal">
+
+   <!-- Modal content -->
+   <div class="modal-content">
+       <h2>Who Are you?</h2>
+           <form>
+               <label for="id-name">Full Name:</label>
+               <input id="id-name" type="text" name="name">
+               <label for="id-message">Email:</label>
+               <input id="id-email" type="text" name="email">
+               <div class="buttons-container">
+                   <button type="button" class="save-button" id="kk" onclick="login()">Save</button>
+                   <button type="button" class="anonyamous-button" onclick="stayAnonyamous()">Stay Anonyamous</button>
+               </div>
+           </form>
+   </div>
+
+</div>
+
+<div class="my-side-bar" > 
+   
+</div>
+
+<div class="my-main">
+
+   <div class="channel-info">
+       <h2>Vegans</h2>
+       <div class="info-container">
+           <!-- <img class="msgimg" src="images/messages.png" alt="">  -->
+           <p id="msgCount"></p>
+           <!-- <img class="usrsimg" src="images/connected.png" alt="">  -->
+           <p id="onlineUsers"></p>
+       </div>
+   </div>
+   
+   <div class="chat-box">
+       <div class="chat-content" id="chat-body">
+           <!-- <div class="chat-message" >
+               <img class="profile-pic" src="https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg" alt="">
+               <div class="chat-bubble">
+                   <button class="close-button" aria-label="Delete" onclick="deleteMessage()" >x</button>
+                   <h4>Basel<span>10:10</span></h4> 
+                   <p>consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim , rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. </p>
+               </div>
+           </div> -->
+       </div>
+
+       <div class="text-input">
+
+           <!--<form action="http://localhost:9097" method="POST">
+               <label for="id-name">Name</label>
+               <input id="id-name" type="text" name="firstName">
+               <label for="id-message">Message</label>
+               <input id="id-message" type="text" name="message">
+               <button>Submit</button>
+           </form>-->
+
+           <form  id="send">
+               <textarea  class="chat-text-area" id="tArea" name="msg"></textarea>
+               <input id="sendMsg" type="image" onclick="sendMesg(); return false;"  />
+           </form>
+           
+               <!--<textarea class="chat-text-area"> </textarea>
+               <img class="sendimg" src="images/babble-sendButton.png" alt="" onclick="getImg()">-->
+       </div>
+   </div>
+</div>
+
+<!-- myBodyend -->
+
+<script type="text/javascript"> mocha.setup('bdd'); </script>
+    <script type="text/javascript" src="test.js"></script>
+    <script> mocha.checkLeaks(); mocha.run(); </script>
+
+     
+       
+    </body>
+</html>
+
+
+
+<!--<div class="chat-message">
+                    <img class="profile-pic" src="https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg" alt="">
+                    <div class="chat-bubble">
+                        <h4>Basel<span>10:10</span></h4> 
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim , rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. </p>
+                    </div>
+                </div>
+
+                <div class="chat-message">
+                    <img class="profile-pic" src="https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg" alt="">
+                    <div class="chat-bubble">
+                        <h4>Basel<span>10:10</span></h4> 
+                        <p>consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim , rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. </p>
+                    </div>
+                </div>
+
+                <div class="chat-message">
+                    <img class="profile-pic" src="https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg" alt="">
+                    <div class="chat-bubble">
+                        <h4>Basel<span>10:10</span></h4> 
+                        <p>Aenean commodo ligula eget dolors. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim , rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. </p>
+                    </div>
+                </div>-->

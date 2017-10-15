@@ -119,7 +119,7 @@
         
 
         window.addEventListener('load',initilize); 
-         function initilize(){
+         function initilize(){ // executes when window opens
             localStorage.removeItem("randid");
             
             if(window.localStorage) {
@@ -183,6 +183,13 @@ window.onunload = function(){
 
 
 
+ document.getElementById("tArea")
+ .addEventListener("keyup", function(event) {
+ event.preventDefault();
+ if (event.keyCode == 13) {
+     document.getElementById("sendM").click();
+ }
+});
 
 
 
@@ -247,7 +254,8 @@ function sendMesg() {
                     deleteBtn.id = msgs[i].id;
                     deleteBtn.addEventListener('click',function(){
                         deleteMsg(this);
-                    });                    
+                    });           
+                    deleteBtn.setAttribute('tabindex', '0');         
                     messageContent.appendChild(deleteBtn);
                     //ID = null;
                     //assignID = false;
@@ -280,6 +288,7 @@ function sendMesg() {
 
                 message.appendChild(profilePic);
                 message.appendChild(messageContent);
+                message.setAttribute('tabindex', '0');
 
                 chat.appendChild(message);
 
